@@ -1,5 +1,9 @@
 # dot. agent toolsuite
 
+[![Tool guide: Open](https://img.shields.io/badge/Tool%20guide-Open-26374D?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Somamill/dot-agent-toolsuite/blob/main/docs/LEARNING.md) [![Reddit: dot. apps](https://img.shields.io/badge/Reddit-dot.%20apps-AD3000?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/user/dot-app/)
+
+[Tool guide](https://github.com/Somamill/dot-agent-toolsuite/blob/main/docs/LEARNING.md) | [Reddit](https://www.reddit.com/user/dot-app/) | [Contact](#contact)
+
 **An experience-led, growing library of agent tools.**
 
 ![The agent toolsuite field guide](docs/preview.png)
