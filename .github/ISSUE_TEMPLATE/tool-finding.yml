@@ -1,0 +1,32 @@
+name: Tool finding
+description: Share a tested workflow, a useful limit, or a corrected finding.
+title: "Tool finding: "
+body:
+  - type: markdown
+    attributes:
+      value: "Share public-safe evidence only. Do not include credentials, private code, personal paths, private screenshots or raw logs."
+  - type: input
+    id: tool
+    attributes:
+      label: Tool and official source
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: What task did you try?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: What operation passed or failed?
+      description: State the environment and test scope without uploading private material.
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: What remains unverified or limited?
+    validations:
+      required: true

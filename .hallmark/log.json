@@ -1,0 +1,15 @@
+{
+  "theme": "custom by reference",
+  "shape": "experience-led tool library",
+  "reference": "https://www.solidjs.com/blog/solid-2-0-the-long-hold/",
+  "waived": [
+    "7b",
+    "23",
+    "77"
+  ],
+  "review": {
+    "desktop": "1280x800 rendered and inspected",
+    "mobile": "375px rendered and inspected; 320px overflow assertion passed",
+    "mechanical": "0 floor failures; 3 reviewed warnings"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "revision": "337e36e1ee095ffc718591a9c03ba71ac6fdb127",
+  "policyVersion": 14,
+  "checkedOn": "2026-11-20",
+  "sourceUrl": "https://github.com/Somamill/dot-brand-kit/tree/337e36e1ee095ffc718591a9c03ba71ac6fdb127",
+  "files": [
+    {
+      "name": "AGENT_DEVELOPMENT.md",
+      "sha256": "68d532983503d70fa5e012264557746f70ea86da096d92b09c0e6b7d252b037c"
+    },
+    {
+      "name": "APP_STORE_PLAYBOOK.md",
+      "sha256": "ba8c96f0487c167b622fd54fc2735bd802689279b096ecfb77ec1d296bc8c48b"
+    },
+    {
+      "name": "LANGUAGES.json",
+      "sha256": "18aa5b53e1d48f860077db279378d71146a1d6dd9944a4e9d1ecfeb9ab9d7aa3"
+    },
+    {
+      "name": "LOCALIZATION.md",
+      "sha256": "f3342e592e7e03d3f33e50c5ca2906e15c3ebb9f74004fa040080d837c5396a7"
+    },
+    {
+      "name": "TOOL_CATALOG.md",
+      "sha256": "c419b9e792c78704efc0dcf832859a7e475ef8539ea0512f4f1096e0214bb6f0"
+    },
+    {
+      "name": "TREND_RESEARCH.md",
+      "sha256": "f9c8cdeed421e42951b112256ac8a11006be525af0ddf398c4f4faf19b6ec8cf"
+    }
+  ]
+}

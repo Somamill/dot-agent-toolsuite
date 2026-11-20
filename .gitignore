@@ -1,0 +1,7 @@
+dist/
+node_modules/
+.playwright-cli/
+.toolsuite-local.json
+__pycache__/
+*.pyc
+.DS_Store

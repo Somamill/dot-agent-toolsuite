@@ -1,0 +1,20 @@
+import { readFile, writeFile, mkdir, cp } from 'node:fs/promises';
+import { root, tools } from './record.mjs';
+import { readReceipts } from '../lib/catalog.mjs';
+
+const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[char]);
+const lessons = JSON.parse(await readFile(new URL('data/lessons.json', root), 'utf8'));
+const kit = JSON.parse(await readFile(new URL('data/kit.json', root), 'utf8'));
+const receipts = readReceipts(await readFile(new URL('data/activity.jsonl', root), 'utf8'), tools);
+const cards = tools.map(tool => `<article class="tool-entry" data-tool-id="${escape(tool.id)}"><div class="tool-title"><h3>${escape(tool.name)}</h3><span class="status ${tool.status.toLowerCase()}">${escape(tool.status)}</span></div><p class="tool-rating">${escape(tool.rating)}</p><p class="tool-summary">${escape(tool.short)}</p><details><summary>Evidence</summary><p>${escape(tool.summary)}</p><p><strong>Evidence:</strong> ${escape(tool.evidence)}</p><p><strong>Limit:</strong> ${escape(tool.limit)}</p></details><div class="tool-actions"><a href="${escape(tool.url)}">Source</a>${tool.command ? `<button hidden class="copy-command" type="button" data-copy="${escape(tool.command)}" aria-label="Copy ${escape(tool.name)} example command">Copy</button>` : ''}</div>${tool.command ? `<code hidden class="tool-command">${escape(tool.command)}</code>` : ''}</article>`).join('\n');
+const path = lessons.map(lesson => `<li><details><summary><h3>${escape(lesson.title)}</h3><time class="lesson-date" datetime="${escape(lesson.date)}">${new Date(lesson.date+'T12:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time></summary><p>${escape(lesson.body)}</p><span class="lesson-tag">${escape(lesson.tag)}</span></details></li>`).join('\n');
+let html = await readFile(new URL('index.html', root), 'utf8');
+const replacements = { TOOL_COUNT:tools.length, TOOLS:cards, LESSONS:path, RECEIPT_SUMMARY:receipts.length ? `${receipts.length} safe command receipts. Only tool, category, outcome and date are recorded.` : 'The log is ready. Unknown historical calls are not counted.', KIT_SUMMARY:kit.revision ? `Policy version ${kit.policyVersion}, checked ${kit.checkedOn}. Source revision ${kit.revision.slice(0,12)}.` : 'No source sync has been recorded yet. The journal does not imply current kit coverage.', KIT_URL:kit.sourceUrl };
+for (const [key, value] of Object.entries(replacements)) html = html.replaceAll(`{{${key}}}`, () => value);
+if (/\{\{[A-Z_]+\}\}/.test(html)) throw new Error('Unresolved page template field.');
+await mkdir(new URL('dist/', root), { recursive:true });
+await writeFile(new URL('dist/index.html', root), html);
+for (const file of ['styles.css','tokens.css','base.css']) await cp(new URL(file, root), new URL('dist/'+file, root));
+await cp(new URL('app.js', root), new URL('dist/app.js', root));
+for (const directory of ['assets','data','lib']) await cp(new URL(directory, root), new URL(`dist/${directory}`, root), { recursive:true });
+console.log(`Built a static field guide with ${tools.length} tools and ${lessons.length} reviewed lessons.`);

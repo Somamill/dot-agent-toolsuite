@@ -1,0 +1,9 @@
+[
+  {"date":"2026-11-17","title":"A tool is an action. A skill is a workflow.","body":"An MCP connection exposes capabilities. A skill teaches an agent when and how to use them. Installing either is not evidence that an operation works.","tag":"Start with the distinction"},
+  {"date":"2026-11-18","title":"Prefer the route that stays out of the way.","body":"Use a connector, CLI or native test before screen control. Reserve the interface for visual judgment and the specific steps programmatic routes cannot complete.","tag":"Choose the surface"},
+  {"date":"2026-11-20","title":"Prove one small, real operation.","body":"A native fixture built and ran. A browser assertion passed. A GPU rendered a frame. These narrow checks said more than a long list of installed applications.","tag":"Keep evidence precise"},
+  {"date":"2026-11-20","title":"Keep credentials out of the conversation.","body":"Reuse protected credentials inside approved background workers. Check real API access without exposing tokens, broadening Keychain access or treating a permission dialog as automation.","tag":"Respect boundaries"},
+  {"date":"2026-11-20","title":"Fail before the expensive work starts.","body":"Gitleaks and targeted Ruff checks now precede project commands in the local validator. A synthetic secret and a Python error both stopped the path as expected.","tag":"Make failure useful"},
+  {"date":"2026-11-20","title":"A finding can be a test fixture.","body":"A synthetic token surfaced in generated Python bytecode. Generating the fixture at runtime kept the test realistic without adding a broad scanner exclusion.","tag":"Keep the uncomfortable lesson"},
+  {"date":"2026-11-20","title":"Let the evidence keep growing.","body":"Safe tool receipts and reviewed kit revisions become part of this field guide. Uninstrumented calls and stale sources remain explicit gaps, not invented coverage.","tag":"Leave a learning path"}
+]
