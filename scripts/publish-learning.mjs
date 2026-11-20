@@ -1,5 +1,8 @@
 import { readFile } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
+import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { root, tools } from './record.mjs';
 import { readReceipts, mergeReceipts } from '../lib/catalog.mjs';
 import { syncKit } from './sync-kit.mjs';
@@ -15,8 +18,18 @@ if (!match) throw new Error('A GitHub owner/repository URL is required.');
 const repository = match[1];
 function api(endpoint, method = 'GET', body) {
   const args = ['api', '--method', method, `repos/${repository}/${endpoint}`];
-  if (body) args.push('--input', '-');
-  const result = spawnSync(executable, args, { input:body ? JSON.stringify(body) : undefined, encoding:'utf8', timeout:60000, maxBuffer:8000000, env:{ ...process.env, GH_PROMPT_DISABLED:'1', GIT_TERMINAL_PROMPT:'0' } });
+  let directory;
+  let result;
+  try {
+    // Non-graphical credential runners intentionally disconnect standard input.
+    if (body) {
+      directory = mkdtempSync(join(tmpdir(), 'toolsuite-publication-'));
+      const payload = join(directory, 'payload.json');
+      writeFileSync(payload, JSON.stringify(body), { mode:0o600 });
+      args.push('--input', payload);
+    }
+    result = spawnSync(executable, args, { encoding:'utf8', timeout:60000, maxBuffer:8000000, env:{ ...process.env, GH_PROMPT_DISABLED:'1', GIT_TERMINAL_PROMPT:'0' } });
+  } finally { if (directory) rmSync(directory, { recursive:true, force:true }); }
   if (result.status !== 0) throw new Error('GitHub operation did not complete. Safe local records are preserved; check approved authentication and branch protections.');
   return JSON.parse(result.stdout);
 }
