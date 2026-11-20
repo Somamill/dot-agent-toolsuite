@@ -54,3 +54,5 @@ Open a [tool finding](https://github.com/Somamill/dot-agent-toolsuite/issues/new
 Original code and writing: MIT. Font licenses and the visual reference are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). This project is not affiliated with Solid or the cataloged vendors.
 
 Questions, ideas or bug reports? [Write to max@miller-max.com](mailto:max@miller-max.com?subject=Agent%20toolsuite%20feedback). The link opens a draft in your mail app; you choose what to send.
+
+[Support Max on Ko-fi](https://ko-fi.com/somamill)
