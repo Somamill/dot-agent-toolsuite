@@ -60,9 +60,17 @@
 {"id":"f477cc5c-cd6e-415d-8f2e-ece446dc7f5a","date":"2026-11-20","tool":"playwright-cli","kind":"automation","outcome":"failed"}
 {"id":"fa4386a6-0614-488d-b723-1deac0722b6e","date":"2026-11-20","tool":"playwright-cli","kind":"automation","outcome":"failed"}
 {"id":"fd2749a8-1e52-4c09-8cca-6feaa1554b7b","date":"2026-11-20","tool":"peekaboo","kind":"automation","outcome":"passed"}
+{"id":"06ab0b76-dcdf-4ee8-b94e-0748ef7c34ee","date":"2026-11-21","tool":"mobilebuildmcp","kind":"test","outcome":"passed"}
+{"id":"0c068592-9001-4e3b-94e0-310d026be4c1","date":"2026-11-21","tool":"mobilebuildmcp","kind":"build","outcome":"passed"}
+{"id":"186dafb1-c8f4-4b86-8d12-2b9a06157175","date":"2026-11-21","tool":"gitleaks","kind":"check","outcome":"passed"}
+{"id":"3256a4a0-badf-42e2-8fa0-abd8e809f95a","date":"2026-11-21","tool":"xcode-mcp","kind":"automation","outcome":"passed"}
+{"id":"40933b9d-1a7a-4082-b416-69652ba59d5c","date":"2026-11-21","tool":"swiftlint","kind":"check","outcome":"failed"}
 {"id":"458b76c9-5c59-4a90-a039-e4121a0201d8","date":"2026-11-21","tool":"ruff","kind":"check","outcome":"passed"}
+{"id":"4cd8f4d6-6255-483e-9971-ffe0aa5fbf38","date":"2026-11-21","tool":"swiftlint","kind":"check","outcome":"failed"}
 {"id":"6ad41e70-6ec2-4e7b-bec7-f09374541236","date":"2026-11-21","tool":"gitleaks","kind":"check","outcome":"passed"}
 {"id":"6bdb13b5-43db-45a7-8d02-089678b68638","date":"2026-11-21","tool":"asc","kind":"check","outcome":"passed"}
 {"id":"b09c6037-c641-4203-9c54-6162e8067b8a","date":"2026-11-21","tool":"asc","kind":"automation","outcome":"failed"}
+{"id":"bb5451f7-43fa-4652-bd2e-3ca35031773f","date":"2026-11-21","tool":"swiftformat","kind":"check","outcome":"failed"}
 {"id":"c9913d19-70a5-4ed8-811d-e12dd122fa8d","date":"2026-11-21","tool":"asc","kind":"automation","outcome":"failed"}
+{"id":"d30118a7-4e0c-450d-9c32-83d3426d79bb","date":"2026-11-21","tool":"gitleaks","kind":"check","outcome":"failed"}
 {"id":"fd688f0b-f8de-4b7e-af6c-4bd4de5ce4eb","date":"2026-11-21","tool":"gitleaks","kind":"check","outcome":"passed"}
