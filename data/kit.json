@@ -1,12 +1,12 @@
 {
-  "revision": "337e36e1ee095ffc718591a9c03ba71ac6fdb127",
-  "policyVersion": 14,
+  "revision": "000c948432a8f027bd314cbf00928175863fa6fc",
+  "policyVersion": 15,
   "checkedOn": "2026-11-20",
-  "sourceUrl": "https://github.com/Somamill/dot-brand-kit/tree/337e36e1ee095ffc718591a9c03ba71ac6fdb127",
+  "sourceUrl": "https://github.com/Somamill/dot-brand-kit/tree/000c948432a8f027bd314cbf00928175863fa6fc",
   "files": [
     {
       "name": "AGENT_DEVELOPMENT.md",
-      "sha256": "68d532983503d70fa5e012264557746f70ea86da096d92b09c0e6b7d252b037c"
+      "sha256": "631ea8e830d9cc215df44e49ebce725a7d083424131a0b7ec4952682a7dd6f2b"
     },
     {
       "name": "APP_STORE_PLAYBOOK.md",
