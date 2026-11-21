@@ -41,10 +41,13 @@ try {
   for (let attempt = 0; attempt < 3 && !published; attempt++) {
     const head = api('git/ref/heads/main').object.sha;
     const commit = api(`git/commits/${head}`);
-    const remote = api(`contents/data/activity.jsonl?ref=${head}`);
-    // shortcut: the contents API serves a small receipt log; shard before its size limit.
-    if (remote.encoding !== 'base64') throw new Error('Receipt log needs archival before further publication. Local records are preserved.');
-    const theirs = readReceipts(Buffer.from(remote.content, 'base64').toString('utf8'), tools);
+    // Download the public log at the exact commit because the background runner caps stdout.
+    const remote = await fetch(`https://raw.githubusercontent.com/${repository}/${head}/data/activity.jsonl`, { signal:AbortSignal.timeout(25000) });
+    if (!remote.ok) throw new Error(`Public receipt log request failed: HTTP ${remote.status}.`);
+    const remoteActivity = await remote.text();
+    // shortcut: keep a small public receipt log; archive before exceeding this limit.
+    if (Buffer.byteLength(remoteActivity) > 1000000) throw new Error('Receipt log needs archival before further publication. Local records are preserved.');
+    const theirs = readReceipts(remoteActivity, tools);
     const merged = mergeReceipts(theirs, ours);
     const activity = merged.map(row => JSON.stringify(row)).join('\n') + (merged.length ? '\n' : '');
     const tree = api('git/trees', 'POST', { base_tree:commit.tree.sha, tree:[
