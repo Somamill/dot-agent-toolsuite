@@ -1,16 +1,16 @@
 {
-  "revision": "5fa5ae10b9ee31468496795b1a2d5da2e5d49bfd",
-  "policyVersion": 18,
+  "revision": "1bd44c0909747258cddd8f4110ff70684f6bb3e7",
+  "policyVersion": 19,
   "checkedOn": "2026-11-22",
-  "sourceUrl": "https://github.com/Somamill/dot-brand-kit/tree/5fa5ae10b9ee31468496795b1a2d5da2e5d49bfd",
+  "sourceUrl": "https://github.com/Somamill/dot-brand-kit/tree/1bd44c0909747258cddd8f4110ff70684f6bb3e7",
   "files": [
     {
       "name": "AGENT_DEVELOPMENT.md",
-      "sha256": "3094e06754b225e4a5d7fd6b604631acc9e85fda561ea2bb0e1123b796a2a4cd"
+      "sha256": "03f886e9f8c71d00c706894dbd6ff0cae757ee303d94aa6413de03fc794c8b52"
     },
     {
       "name": "APP_STORE_PLAYBOOK.md",
-      "sha256": "b219cf09b457b23191b7cdb47ed12e80b86c3e2fcaefed853e5db480fa5efa52"
+      "sha256": "66ceba90dc90c1915feab867c2b55340bd1629adcaf6a374c0b598e263209f9f"
     },
     {
       "name": "LANGUAGES.json",
