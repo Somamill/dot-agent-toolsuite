@@ -9,6 +9,9 @@
     "build": "node scripts/build.mjs",
     "dev": "npm run build && python3 -m http.server 4173 --bind 127.0.0.1 --directory dist",
     "test": "node --test",
+    "skills:check": "node scripts/check-work-skills.mjs",
+    "skills:package": "python3 scripts/package-work-skills.py",
+    "skills:verify": "python3 scripts/package-work-skills.py --check",
     "sync:kit": "node scripts/sync-kit.mjs",
     "publish:learning": "node scripts/publish-learning.mjs"
   }

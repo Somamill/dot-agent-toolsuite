@@ -12,6 +12,26 @@ We curate and rate tools from hands-on app-development experience, with a growin
 
 Ratings distinguish **Essential**, **Specialist** and **Optional** tools within their relevant workflows. They are editorial recommendations, not numerical benchmarks. Separately, the catalog distinguishes **Verified** (a specific operation passed), **Installed** (available, without a completed workflow claim) and **Evaluated** (researched, not installed/tested here). Open each tool's evidence and limits. Native platform tools are identified alongside the open-source tooling.
 
+## Work skills for Copilot and Gemini
+
+Use the [Windows 11 work-PC guide](docs/WORK_PC_SKILLS.md) for **16 standalone skills** that import into supported Microsoft 365 Copilot and Gemini skill interfaces. Each has its own `SKILL.md`; the [ready-to-upload packages](packages/work-pc/) contain exactly one skill per ZIP. No developer software or package installation is needed on the work PC.
+
+The pack covers Excel data checks, headcount/FTE reconciliation, forecast bridges, spreadsheet models, Power BI/DAX, management presentations, business documents, corporate style, SQL planning, evidence-based research, reproducible analysis, design review, project handoffs, interactive visualizations, and video storyboards. [Browse the source catalog](skills/work/catalog.json) or [review the upstream research and adaptation decisions](docs/SKILL_SOURCES.md).
+
+Instructions use the capabilities actually available in the selected host. Importing them does not install a renderer, enable a connector, or guarantee access to a workbook or model. Company data and approved templates remain in the employer's environment. This repository contains generic procedures and synthetic validation examples.
+
+GitHub is the source of truth. Update the source, rebuild the per-skill packages, then replace the deployed copy in the work account. Changes here do not automatically update installed skills. Maintainer checks run locally with the repository's existing Node/Python requirements:
+
+```sh
+npm run skills:check
+npm run skills:package
+npm run skills:verify
+npm test
+npm run build
+```
+
+Package verification checks source hashes and archive contents. Successful import and execution in a company account must be checked in that account; they are not implied by a passing build. No GitHub Actions workflow is required.
+
 ## Explore locally
 
 Requires Node.js 22+ and Python 3. No npm dependencies, account, API key or paid service is required to browse the guide.

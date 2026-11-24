@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "packVersion": "1.0.0",
+  "reviewedOn": "2026-11-25",
+  "target": [
+    "microsoft-365-copilot",
+    "gemini-apps"
+  ],
+  "profile": "standalone-text",
+  "sourceRepository": "https://github.com/Somamill/dot-agent-toolsuite",
+  "skills": [
+    {
+      "name": "work-tool-routing",
+      "title": "Work tool routing",
+      "preferredHosts": [
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ],
+      "group": "core"
+    },
+    {
+      "name": "excel-data-coverage",
+      "title": "Excel data coverage",
+      "preferredHosts": [
+        "excel",
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ],
+      "group": "core"
+    },
+    {
+      "name": "workforce-reconciliation",
+      "title": "Workforce reconciliation",
+      "preferredHosts": [
+        "excel",
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ],
+      "group": "core"
+    },
+    {
+      "name": "forecast-variance",
+      "title": "Forecast variance",
+      "preferredHosts": [
+        "excel",
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ],
+      "group": "core"
+    },
+    {
+      "name": "power-bi-analysis",
+      "title": "Power BI analysis",
+      "preferredHosts": [
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ],
+      "group": "core"
+    },
+    {
+      "name": "management-presentation",
+      "title": "Management presentation",
+      "preferredHosts": [
+        "powerpoint",
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ],
+      "group": "core"
+    },
+    {
+      "name": "business-document",
+      "title": "Business document",
+      "preferredHosts": [
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ],
+      "group": "core"
+    },
+    {
+      "name": "corporate-style",
+      "title": "Corporate style",
+      "preferredHosts": [
+        "excel",
+        "powerpoint",
+        "gemini",
+        "copilot-chat",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ],
+      "group": "core"
+    },
+    {
+      "name": "spreadsheet-modeling",
+      "title": "Spreadsheet modeling",
+      "group": "extended",
+      "preferredHosts": [
+        "excel",
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "analytical-sql",
+      "title": "Analytical SQL",
+      "group": "extended",
+      "preferredHosts": [
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "evidence-research",
+      "title": "Evidence research",
+      "group": "extended",
+      "preferredHosts": [
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "reproducible-analysis",
+      "title": "Reproducible analysis",
+      "group": "extended",
+      "preferredHosts": [
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "design-review",
+      "title": "Design review",
+      "group": "extended",
+      "preferredHosts": [
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "project-context",
+      "title": "Project context",
+      "group": "extended",
+      "preferredHosts": [
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "video-storyboard",
+      "title": "Video storyboard",
+      "group": "extended",
+      "preferredHosts": [
+        "copilot-chat",
+        "gemini",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "interactive-visualization",
+      "title": "Interactive visualization",
+      "group": "extended",
+      "preferredHosts": [
+        "gemini",
+        "copilot-chat",
+        "cowork",
+        "agent-builder"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    }
+  ]
+}

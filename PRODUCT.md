@@ -9,10 +9,12 @@ web
 Static HTML, CSS and JavaScript. Node standard-library build and tests. No runtime dependencies or tracking.
 
 ## Users
-App developers and agent users choosing tools for native, web and creative work.
+App developers and agent users choosing tools for native, web and creative work; office users importing portable work instructions into Microsoft 365 Copilot and Gemini.
 
 ## Product Purpose
 Maintain an experience-led, rated tool library for real app development, backed by a growing learning path. Keep tool availability, a successful command, a small verified operation and production readiness distinct.
+
+The work-skills pack transfers useful task and verification methods to browser/Office-only environments. Keep it self-contained, company-neutral, and independent of local coding-agent runtimes. Generated upload packages remain tied to their versioned source by hashes. A source check or packaging test never establishes successful tenant installation.
 
 ## Primary action
 Find a tool for a task, inspect its evidence, and open its official source.
