@@ -1,78 +1,91 @@
-# dot. agent toolsuite
+# Finance skills
 
-[![Tool guide: Open](https://img.shields.io/badge/Tool%20guide-Open-26374D?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Somamill/dot-agent-toolsuite/blob/main/docs/LEARNING.md) [![Reddit: dot. apps](https://img.shields.io/badge/Reddit-dot.%20apps-AD3000?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/user/dot-app/)
+[![Copilot edition](https://img.shields.io/badge/Copilot-edition-245844?style=flat)](docs/COPILOT.md) [![Gemini edition](https://img.shields.io/badge/Gemini-edition-245844?style=flat)](docs/GEMINI.md) [![License MIT](https://img.shields.io/badge/license-MIT-4C5054?style=flat)](LICENSE)
 
-[Tool guide](https://github.com/Somamill/dot-agent-toolsuite/blob/main/docs/LEARNING.md) | [Reddit](https://www.reddit.com/user/dot-app/) | [Contact](#contact)
+[Copilot setup](docs/COPILOT.md) | [Gemini setup](docs/GEMINI.md) | [All skills](SKILLS.md) | [Windows tools](docs/WINDOWS.md) | [Updates](docs/UPDATES.md) | [Support Max on Ko-fi](https://ko-fi.com/somamill)
 
-**An experience-led, growing library of agent tools.**
+![Finance skills: from source to decision, with Copilot and Gemini editions](assets/readme-banner.svg)
 
-![The agent toolsuite field guide](docs/preview.png)
+**24 practical workflows for financial controlling, planning and reporting.** One maintained source library, separate Microsoft 365 Copilot and Gemini editions, and optional Python tools for your Windows work PC.
 
-We curate and rate tools from hands-on app-development experience, with a growing record of what works and where it stops. The goal is a shorter path from a request to an inspected result—not a larger list of installed software.
+Start with an individual skill, supply the relevant work files in your approved account, and ask for a result with source coverage and reconciliation checks. The instructions work without a local coding agent or an API subscription. Python, Power BI, VS Code and SharePoint provide additional routes when those capabilities are available.
 
-Ratings distinguish **Essential**, **Specialist** and **Optional** tools within their relevant workflows. They are editorial recommendations, not numerical benchmarks. Separately, the catalog distinguishes **Verified** (a specific operation passed), **Installed** (available, without a completed workflow claim) and **Evaluated** (researched, not installed/tested here). Open each tool's evidence and limits. Native platform tools are identified alongside the open-source tooling.
+## Choose your edition
 
-## Work skills for Copilot and Gemini
+| | Microsoft 365 Copilot | Gemini |
+| --- | --- | --- |
+| Get started | [Copilot guide](docs/COPILOT.md) | [Gemini guide](docs/GEMINI.md) |
+| Import packages | [Individual ZIPs](packages/copilot) | [Individual ZIPs](packages/gemini) |
+| Read instructions | [Copilot SKILL.md files](editions/copilot) | [Gemini SKILL.md files](editions/gemini) |
+| Work surface | Chat, Excel, PowerPoint or an eligible custom agent | Native Skills when exposed by the approved account |
+| Fallback | Paste one workflow into an approved conversation | [Gem-ready instruction text](editions/gemini-gems) or a manual conversation |
+| Update installed copy | Replace/edit, or update the app-created OneDrive folder and Refresh | Replace the existing skill; update Gem instructions separately |
 
-Use the [Windows 11 work-PC guide](docs/WORK_PC_SKILLS.md) for **16 standalone skills** that import into supported Microsoft 365 Copilot and Gemini skill interfaces. Each has its own `SKILL.md`; the [ready-to-upload packages](packages/work-pc/) contain exactly one skill per ZIP. No developer software or package installation is needed on the work PC.
+Each ZIP contains **one root `SKILL.md`**. Upload one skill at a time. The whole repository ZIP is a transport download, not a single skill package. Package checks establish integrity; work-account import and task behavior still need verification in that account.
 
-The pack covers Excel data checks, headcount/FTE reconciliation, forecast bridges, spreadsheet models, Power BI/DAX, management presentations, business documents, corporate style, SQL planning, evidence-based research, reproducible analysis, design review, project handoffs, interactive visualizations, and video storyboards. [Browse the source catalog](skills/work/catalog.json) or [review the upstream research and adaptation decisions](docs/SKILL_SOURCES.md).
+## Start with the work you do
 
-Instructions use the capabilities actually available in the selected host. Importing them does not install a renderer, enable a connector, or guarantee access to a workbook or model. Company data and approved templates remain in the employer's environment. This repository contains generic procedures and synthetic validation examples.
+| Task | Skills to begin with | Expected result |
+| --- | --- | --- |
+| Monthly personnel reporting | Excel data coverage, workforce reconciliation, forecast variance | Reconciled headcount/FTE and a driver explanation with exceptions |
+| Actuals ingestion and mappings | Power Query ETL, account mapping, SharePoint evidence | Repeatable refresh, traceable source files and unresolved mappings retained |
+| Month-end close | Close controls, spreadsheet modeling, business document | Opening-to-closing checks, an evidence register and proposed adjustments |
+| Cash and planning | Cash and working capital, scenario planning | Comparable KPIs and explicit assumption-based scenarios |
+| Management reporting | Power BI analysis, management presentation, corporate style | Measures and slides tied to source totals and the approved company template |
+| Research and communication | Evidence research, document extraction, process diagram | Primary-source findings, extraction checks and a readable process map |
 
-GitHub is the source of truth. Update the source, rebuild the per-skill packages, then replace the deployed copy in the work account. Changes here do not automatically update installed skills. Maintainer checks run locally with the repository's existing Node/Python requirements:
+[Browse all 24 skills and their download links](SKILLS.md). The core, extended and specialist groups each contain eight skills; a custom Agent Builder agent can use a focused selection instead of the entire library.
 
-```sh
-npm run skills:check
-npm run skills:package
-npm run skills:verify
-npm test
-npm run build
+### An example request
+
+> Use workforce-reconciliation on the two attached monthly files. Reconcile company headcount and FTE, separate hires and leavers from transfers, show unmapped cost centres, and explain which population and checks you actually completed.
+
+For ordinary analysis, let Excel, Power Query or a local calculation tool do the arithmetic. Use the assistant to select the method, investigate exceptions, explain the result and prepare the requested deliverable.
+
+## Python tools that run locally
+
+The core tools use Python's standard library. They never modify input files, make network calls or start a background service.
+
+```powershell
+py -3 scripts\finance_tools.py profile examples\actual.csv --keys cost_center account --amounts amount
+py -3 scripts\finance_tools.py reconcile examples\plan.csv examples\actual.csv --keys cost_center account --amount amount
+py -3 scripts\finance_tools.py bridge --plan-quantity 100 --actual-quantity 110 --plan-rate 20 --actual-rate 21 --plan-fx 150 --actual-fx 145
 ```
 
-Package verification checks source hashes and archive contents. Successful import and execution in a company account must be checked in that account; they are not implied by a passing build. No GitHub Actions workflow is required.
+The optional `workbook_audit.py` checks stored workbook cells/formula caches with openpyxl. `duckdb_profile.py` profiles complete local CSV/Parquet files with DuckDB. Neither claims that a spreadsheet formula was recalculated or that a particular large-file capacity is guaranteed. [Windows setup and actual output definitions](docs/WINDOWS.md)
 
-## Explore locally
+## Upstream projects, adapted to the work environment
 
-Requires Node.js 22+ and Python 3. No npm dependencies, account, API key or paid service is required to browse the guide.
+The library draws on reviewed methods from Anthropic's document skills, DuckDB skills, scientific analysis, design review, source-based research and verification workflows. The portable finance instructions are independently authored; they do not impersonate those tools or acquire their paid APIs.
 
-```sh
-npm test
-npm run dev
+[Upstream sources and requested installation options](docs/UPSTREAMS.md) records the inspected commits, licences and host requirements for Hallmark, Anthropic skills, Claude-mem, HyperFrames, DuckDB, Valyu, D3 and the scientific skills collection. `fetch_upstreams.py` acquires pinned source archives; acquisition is separate from activating a coding-host plugin or installing a runtime on your PC.
+
+## Keep it current
+
+Canonical instructions live in `skills/`. A deterministic build produces both editions, 48 individual upload packages, Gem-ready text and the catalogue. Every package is tied to its source with SHA-256 hashes. Upstream changes are checked against pinned commits and reviewed before adoption. [Update workflow](docs/UPDATES.md)
+
+```powershell
+py -3 scripts\build.py
+py -3 scripts\build.py --check
+py -3 -m unittest discover -s tests -v
 ```
 
-Open `http://localhost:4173`. `npm run build` writes a portable static site to `dist/`. The site does not run tools, collect analytics or contact third-party services in the browser. Fonts are self-hosted.
+GitHub Actions are not enabled. A separately configured maintenance task can check for changes; this repository does not install a scheduler. Updating GitHub does not update an existing native Copilot or Gemini import. The folder copier preserves local edits and records the package version it copied.
 
-## Start with the work
+## Browse the catalogue
 
-| Work | Start here |
-| --- | --- |
-| Native Apple app | MobileBuildMCP/native CLI for builds; Xcode MCP for relevant editor capabilities |
-| Web interface | Isolated headless Playwright; Chrome DevTools for console/network/performance |
-| Source safety | Gitleaks with fully redacted logs; targeted Ruff checks on changed Python |
-| Creative asset | Blender for scripted 3D, HyperFrames for motion graphics, FFmpeg/ImageMagick/resvg for exports |
-| GitHub or Store work | Approved connectors or background credential wrappers; existing authorization still applies |
+Open `site/index.html` from the extracted repository, or serve the repository locally:
 
-## A growing learning path
-
-See [how the journal grows](docs/LEARNING.md). Supported CLI runs can be recorded without their arguments, output, working directory or project name:
-
-```sh
-node scripts/run-tool.mjs gitleaks -- gitleaks dir --redact=100 .
-node scripts/run-tool.mjs ruff -- ruff check --no-fix changed.py
-npm run sync:kit
+```powershell
+py -3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-`npm run publish:learning` merges safe records and verified kit provenance into this repository using existing authorized GitHub access. It publishes only two fixed data files. Use a fork and update package.json's repository URL if publishing your own journal. On the owner's Mac, ignored local configuration selects the existing non-graphical credential wrapper. No credential is included in this repository.
+Then open `http://127.0.0.1:8000/site/`. The catalogue provides edition selection, task search, example prompts and light/dark appearances. Its interface uses a pinned [dot. design foundation](branding/dot/source.json). The repository design does not replace your employer's approved reporting templates.
 
-This is task-driven synchronization, not a universal interceptor, webhook or always-on service. Participating agents record tool use, review new lessons and publish at task completion. Agents updating dot-kit requirements refresh the journal as part of that task. Unsupported calls remain outside coverage, and failed publication stays pending locally. GitHub API rate limits still apply.
+## Evidence and next work
 
-## Contribute evidence
+[Validation record](docs/VALIDATION.md) separates tests actually run from Windows, tenant and visual checks still outstanding. [Further implementation priorities](docs/ROADMAP.md) focuses on company-specific data contracts, Power BI tie-outs and repeatable close workflows.
 
-Open a [tool finding](https://github.com/Somamill/dot-agent-toolsuite/issues/new?template=tool-finding.yml). Include the task, supported environment, exact scope of the test and a limitation. Do not include tokens, private source, personal paths, private screenshots or raw logs. A process exit code is not a claim of app correctness, security or production quality.
+Keep business data, internal SharePoint addresses, credentials and private templates in approved company storage. Public examples here are synthetic. Report a reproducible issue with synthetic data and a package version.
 
-Original code and writing: MIT. Font licenses and the visual reference are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). This project is not affiliated with Solid or the cataloged vendors.
-
-Questions, ideas or bug reports? [Write to max@miller-max.com](mailto:max@miller-max.com?subject=Agent%20toolsuite%20feedback). The link opens a draft in your mail app; you choose what to send.
-
-[Support Max on Ko-fi](https://ko-fi.com/somamill)
+Designed with the dot. foundation. Original library and tooling: [MIT](LICENSE). Upstream projects retain their own licences and attribution in [source notes](docs/UPSTREAMS.md).

@@ -1,23 +1,13 @@
-# dot-agent-toolsuite
+# Finance skills
 
-This public repository is a living field guide. Read PRODUCT.md and DESIGN.md before editing. Run `npm test` and `npm run build`; inspect desktop and mobile renders for UI changes. Preserve the static, dependency-free architecture unless a real requirement needs more.
+Maintain one company-neutral source library in `skills/`. Generate the Microsoft 365 Copilot and Gemini editions from that library and the host notes in `adapters/`. Read `PRODUCT.md`, `DESIGN.md`, `docs/UPDATES.md` and the applicable source notes before changes.
 
-## Work-PC skills
+The baseline works as instructions. Windows 11, Python, Power BI, VS Code and approved SharePoint are available to the owner; optional packages, coding-agent subscriptions, API access and tenant capabilities must be checked. Microsoft 365 Copilot is distinct from GitHub Copilot; Gemini Apps is distinct from Gemini CLI. Never claim remote installation, execution, refresh, source coverage or visual review without evidence.
 
-Maintain the canonical portable instructions under `skills/work/` and the individual upload packages under `packages/work-pc/`. The target is a Windows 11 work PC using Copilot and Gemini; a user must not need a local coding agent, terminal, package installer, API key, or additional service to use these instructions. Use only capabilities already available in the selected host and state when a requested operation could not be executed.
+Keep work data, private templates, internal addresses, employee details, credentials and generated business outputs out of this public repository. Use synthetic examples. The dot. foundation styles this repository; employer outputs use the employer's approved template.
 
-After changing work skills, their catalog, or packaging code, run `npm run skills:check`, `npm run skills:package`, and `npm run skills:verify` as well as tests/build. Commit the regenerated per-skill ZIPs and manifest with the source change. Keep one root `SKILL.md` per ZIP and no dependencies on sibling skills. The standalone-text profile intentionally excludes scripts, private templates, and extra files. Review upstream sources and licences before changing that policy.
+Run `python scripts/build.py`, `python scripts/build.py --check`, and `python -m unittest discover -s tests -v`. Run relevant optional helper checks if that code changes. Inspect desktop and mobile renders for catalogue changes. Keep package hashes, provenance and the validation report consistent with the actual evidence. Do not modify a reviewed upstream pin automatically just because a new commit exists.
 
-Keep employer data, internal guides, assets, credentials, and user-specific work outputs out of this public repository. Record researched source snapshots and adaptation limits in `docs/SKILL_SOURCES.md`. Update `docs/WORK_PC_SKILLS.md` when verified import paths change. Package checks establish file integrity, not successful tenant installation or real task behavior. GitHub is the source of truth; imported copies do not automatically update.
+GitHub Actions remain disabled. Use the documented local update checker and the separately configured maintenance task. The user's request for ongoing maintenance authorizes checking upstream changes and preparing validated updates; it does not authorize expanding credentials, collecting telemetry, restarting paused services or publishing employer data. Do not enable a background daemon on the work PC.
 
-## Record, learn, publish
-
-For a supported tool run, use `node /path/to/dot-agent-toolsuite/scripts/run-tool.mjs <tool-id> -- <command> [args...]`. It records an allowlisted receipt without recording the command arguments, output, working directory, project name or credentials. A passed receipt means the process exited successfully, not that every capability is verified.
-
-If an agent tool cannot run through that wrapper, append its outcome with `node scripts/record.mjs <tool-id> <kind> <passed|failed>`. Do not invent coverage. Unsupported or unrecorded calls remain outside the log. Review useful new lessons in data/lessons.json rather than turning raw output into public prose.
-
-At task completion, run `npm run sync:kit`, tests/build, and `npm run publish:learning` when authenticated publication is available. After changing the approved dot-kit requirements, run that same sync/publication path. The publisher merges safe receipt IDs and source provenance; it publishes only data/activity.jsonl and data/kit.json. It never publishes arbitrary working-tree files. Keep pending records locally on failure and report the pending publication.
-
-For this Mac, use the existing approved non-graphical GitHub wrapper in the ignored .toolsuite-local.json. Never commit that local config, a token, private key, raw logs or personal paths. Do not enable GitHub Actions, add a poller, expand credentials, or restart a paused service.
-
-These instructions cover participating agents and the provided wrapper. There is no universal tool interception or instant cross-repository webhook. Source freshness updates at agent/task boundaries and explicit syncs; state that limitation honestly.
+Publish generic, tested maintenance changes through the user's existing GitHub permissions. Preserve concurrent edits. If a test cannot run, keep the change reviewable and state the missing evidence. Native Copilot and Gemini imports still require their own replacement or Refresh step.
