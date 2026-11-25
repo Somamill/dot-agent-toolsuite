@@ -19,6 +19,7 @@ Checked **2026-11-25**. This record describes the evidence obtained in the build
 | Upstream source acquisition | All four requested archive hashes verified; 16,165 archive blobs matched the pinned Git files with zero mismatches |
 | Archive boundaries | Traversal, Windows names, case collisions, symlinks, size limits, checksums, existing files and non-execution behavior checked |
 | Update checker | Rate limits and blocked document redirects were recorded as unavailable; pins stayed unchanged |
+| GitHub publication | All 193 published files matched their local Git blob hashes; the toolsuite main README links to the finance branch |
 
 The test count includes 16 upstream-helper cases. Package validation does not prove that a model will follow every instruction. Optional tests intentionally skip when their dependencies are absent; inspect the run output before describing them as passed.
 
@@ -38,7 +39,9 @@ Impeccable's static detector returned no findings on the final product frontend 
 
 Hallmark static review retained one finding in an unchanged vendored `.dot-button:disabled` rule. The catalogue does not use that class; product disabled states are explicitly overridden. Mixed light/dark token resolution and a numeric-selector match also required manual interpretation. These are documented detector limitations, not a claim of a clean full Hallmark pass.
 
-**Desktop/mobile visual review is blocked in this environment.** Local Chromium failed before navigation with a socket-permission error. The cloud browser's URL policy rejected a local-file preview. No rendered browser screenshots or full browser-layout pass are claimed. The static catalogue can be reviewed locally using the Windows guide; it has not been deployed as a public website.
+**Desktop/mobile catalogue visual review is blocked in this environment.** Local Chromium failed before navigation with a socket-permission error. The cloud browser's URL policy rejected a local-file preview. No rendered catalogue screenshot or full browser-layout pass is claimed. The static catalogue can be reviewed locally using the Windows guide; it has not been deployed as a public website.
+
+The published GitHub README was separately inspected in a desktop browser after publication. Its dot banner, edition badges, navigation and introductory layout rendered correctly. That check covers the GitHub README, not the interactive catalogue or a mobile layout.
 
 ## Checks still requiring the target environment
 

@@ -43,7 +43,7 @@ The default tests skip optional openpyxl/DuckDB checks when their packages are u
 
 ## Ongoing maintenance
 
-The owner requested ongoing updates. The intended cadence is a daily morning check in **Asia/Tokyo**, performed by a separately configured maintenance task rather than GitHub Actions or a work-PC daemon. The task checks this repository's published location, official host docs and pinned upstreams, and reports material changes and imports that need replacement.
+The owner requested ongoing updates. A separate maintenance task was enabled on **2026-11-25**, with a daily check around **08:00 Asia/Tokyo** and its first scheduled check on **2026-11-26**. It checks this repository's published location, official host docs and pinned upstreams, and reports material changes and imports that need replacement. It uses neither GitHub Actions nor a work-PC daemon.
 
 For compatible instruction/documentation changes, the maintainer can publish only after rebuilding, testing and reviewing the diff. Runtime upgrades, changed permissions/data transmission, new commercial services and changed finance definitions require a concrete reviewable proposal. If the execution environment cannot validate a change, leave it in a clearly described branch/PR and report the blocker. Do not call the library updated because a check was merely scheduled.
 
