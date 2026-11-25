@@ -12,6 +12,12 @@ We curate and rate tools from hands-on app-development experience, with a growin
 
 Ratings distinguish **Essential**, **Specialist** and **Optional** tools within their relevant workflows. They are editorial recommendations, not numerical benchmarks. Separately, the catalog distinguishes **Verified** (a specific operation passed), **Installed** (available, without a completed workflow claim) and **Evaluated** (researched, not installed/tested here). Open each tool's evidence and limits. Native platform tools are identified alongside the open-source tooling.
 
+## Finance skills
+
+The expanded [Finance skills library](https://github.com/Somamill/dot-agent-toolsuite/tree/finance-skills) provides **24 finance workflows** with separate Copilot and Gemini editions, 48 individual import packages, a dot-styled catalogue, and optional Windows/Python tools. It adds Power Query ETL, SharePoint evidence, account mapping, close controls, cash/working-capital analysis, scenario planning, document extraction and process diagrams.
+
+Start with the [finance setup and catalogue](https://github.com/Somamill/dot-agent-toolsuite/blob/finance-skills/README.md), review the [validation record](https://github.com/Somamill/dot-agent-toolsuite/blob/finance-skills/docs/VALIDATION.md), or follow the [maintenance workflow](https://github.com/Somamill/dot-agent-toolsuite/blob/finance-skills/docs/UPDATES.md). The complete finance project is published on the `finance-skills` branch; the toolsuite below remains available on `main`.
+
 ## Work skills for Copilot and Gemini
 
 Use the [Windows 11 work-PC guide](docs/WORK_PC_SKILLS.md) for **16 standalone skills** that import into supported Microsoft 365 Copilot and Gemini skill interfaces. Each has its own `SKILL.md`; the [ready-to-upload packages](packages/work-pc/) contain exactly one skill per ZIP. No developer software or package installation is needed on the work PC.
